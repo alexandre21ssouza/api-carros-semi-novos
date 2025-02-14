@@ -1,7 +1,7 @@
 package com.spring.carros_semi_novos.services;
 
-import com.spring.carros_semi_novos.domain.Carro;
-import com.spring.carros_semi_novos.repository.CarroRepository;
+import com.spring.carros_semi_novos.domain.Veiculo;
+import com.spring.carros_semi_novos.repository.VeiculoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,18 +12,18 @@ import java.util.Optional;
 public class CarroService {
 
     @Autowired
-    private CarroRepository repository;
+    private VeiculoRepository repository;
 
-    public List<Carro> listarTodos(){
+    public List<Veiculo> listarTodos(){
         return  repository.findAll();
     }
 
-    public Optional<Carro> buscarPorId(Long id){
+    public Optional<Veiculo> buscarPorId(Long id){
         return repository.findById(id);
     }
 
-    public Carro salvar(Carro carro){
-        return repository.save(carro);
+    public Veiculo salvar(Veiculo veiculo){
+        return repository.save(veiculo);
     }
 
     public void excluir(Long id){
