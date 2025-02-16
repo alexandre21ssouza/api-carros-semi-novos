@@ -39,6 +39,16 @@ public class VeiculoService {
         return repository.save(veiculo);
     }
 
+    public Veiculo atualizar (Long id, Veiculo dto) {
+        Veiculo veiculo = buscarPorId(id);
+        veiculo.setModelo(dto.getModelo());
+        veiculo.setMarca(dto.getMarca());
+        veiculo.setPlaca(dto.getPlaca());
+        veiculo.setAno(dto.getAno());
+        veiculo.setPreco(dto.getPreco());
+        return repository.save(veiculo);
+    }
+
     public void excluir(Long id){
         repository.deleteById(id);
     }

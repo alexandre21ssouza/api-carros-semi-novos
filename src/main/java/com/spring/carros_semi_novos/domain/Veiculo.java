@@ -31,5 +31,5 @@ public class Veiculo {
     private int ano;
 
     @Column(nullable = false)
-    private double preço;
+    private double preco;
 }
