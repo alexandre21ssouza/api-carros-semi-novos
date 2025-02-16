@@ -1,13 +1,12 @@
 package com.spring.carros_semi_novos.controller;
 
 import com.spring.carros_semi_novos.domain.Veiculo;
+import com.spring.carros_semi_novos.dto.VeiculoDTO;
 import com.spring.carros_semi_novos.services.VeiculoService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,5 +26,11 @@ public class VeiculoController {
     public ResponseEntity<Veiculo> buscarPorId(@PathVariable Long id) {
         Veiculo veiculo = service.buscarPorId(id);
         return ResponseEntity.ok(veiculo);
+    }
+
+    @PostMapping
+    public ResponseEntity<Veiculo> adicionar(@RequestBody VeiculoDTO dto){
+        Veiculo veiculo = service.salvar(dto);
+        return ResponseEntity.status(HttpStatus.CREATED).body(veiculo);
     }
 }
