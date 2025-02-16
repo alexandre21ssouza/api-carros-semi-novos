@@ -1,21 +1,26 @@
 package com.spring.carros_semi_novos.services;
 
 import com.spring.carros_semi_novos.domain.Veiculo;
+import com.spring.carros_semi_novos.dto.VeiculoDTO;
 import com.spring.carros_semi_novos.exception.VeiculoNotFoundException;
 import com.spring.carros_semi_novos.repository.VeiculoRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
+
+
 
 @Service
+@RequiredArgsConstructor
 public class VeiculoService {
 
     @Autowired
     private VeiculoRepository repository;
 
     public List<Veiculo> listarTodos(){
+
         return  repository.findAll();
     }
 
@@ -28,7 +33,9 @@ public class VeiculoService {
         return veiculo;
     }
 
-    public Veiculo salvar(Veiculo veiculo){
+    public Veiculo salvar(VeiculoDTO dto){
+        Veiculo veiculo = new Veiculo(null, dto.getModelo(), dto.getMarca(),
+                dto.getPlaca(), dto.getAno(), dto.getPreco());
         return repository.save(veiculo);
     }
 
