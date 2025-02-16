@@ -50,6 +50,9 @@ public class VeiculoService {
     }
 
     public void excluir(Long id){
+        if (!repository.existsById(id)) {
+            throw new VeiculoNotFoundException("Veículo não encontrado para exclusão!");
+        }
         repository.deleteById(id);
     }
 }
