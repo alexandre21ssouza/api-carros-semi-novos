@@ -33,4 +33,12 @@ public class VeiculoController {
         Veiculo veiculo = service.salvar(dto);
         return ResponseEntity.status(HttpStatus.CREATED).body(veiculo);
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Veiculo> atualizar(@PathVariable Long id,
+                                             @RequestBody VeiculoDTO dto){
+        Veiculo veiculo = service.atualizar(id, dto);
+        return ResponseEntity.ok(veiculo);
+    }
+
 }
