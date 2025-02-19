@@ -19,6 +19,7 @@ public class VeiculoService {
     @Autowired
     private VeiculoRepository repository;
 
+
     public List<Veiculo> listarTodos(){
 
         return  repository.findAll();
