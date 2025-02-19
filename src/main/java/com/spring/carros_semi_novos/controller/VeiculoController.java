@@ -6,6 +6,7 @@ import com.spring.carros_semi_novos.services.VeiculoService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +18,9 @@ import java.util.List;
 @RequiredArgsConstructor
 @Tag(name = "Veículos", description = "Gerenciamento de estoque de Veículos")
 public class VeiculoController {
-    private final VeiculoService service;
+
+    @Autowired
+      private VeiculoService service;
 
     @Operation(summary = "Lista todos os veículos")
     @GetMapping
@@ -48,7 +51,7 @@ public class VeiculoController {
     }
 
     @Operation(summary = "Remove um veículo pelo id")
-    @DeleteMapping("{/id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletar(@PathVariable Long id){
         service.excluir(id);
         return ResponseEntity.noContent().build();
