@@ -1,8 +1,8 @@
 # 🚗 api-carros-semi-novos
 
-# Estoque de Carros - API REST com Spring Boot
+# Estoque de Carros - API RESTful com Spring Boot
 
-## Este projeto é uma API REST para gerenciar um estoque de carros, utilizando Spring Boot, Banco de Dados H2 e PostgreSQL, Swagger para documentação e Maven para gerenciamento de dependências.
+## Este projeto é uma API REST para gerenciar um estoque de carros, utilizando Spring Boot, Banco de Dados H2 e PostgreSQL, Postman para testes, Swagger para documentação e Maven para gerenciamento de dependências.
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -12,6 +12,8 @@
 
 ### Spring Data JPA (para comunicação com o banco de dados)
 
+### Spring Web
+
 ### Banco de Dados H2 (para testes) e PostgreSQL
 
 ### Swagger (para documentação da API)
@@ -19,6 +21,10 @@
 ### Lombok (para reduzir código boilerplate)
 
 ### Maven (para gerenciamento do projeto)
+
+### Postman
+
+### InteliJ
 
 ## 📂 Estrutura do Projeto
 
@@ -64,7 +70,8 @@ mvn spring-boot:run
 
 🚗 Carros
 
-![image](https://github.com/user-attachments/assets/9014514f-19c1-433c-81d5-555ea8822c20)
+![Captura de tela de 2025-02-19 23-00-37](https://github.com/user-attachments/assets/008921ff-a1cc-4590-889f-76c1e43a1c1a)
+
 
 ## 📜 Documentação com Swagger
 
@@ -77,6 +84,12 @@ Isso abrirá a interface interativa do Swagger para testar os endpoints da API.
 ## ⚙️ Configuração do Banco de Dados
 
 Banco H2 (padrão)
+
+http://localhost:8080/h2-console
+
+![Captura de tela de 2025-02-19 21-15-29](https://github.com/user-attachments/assets/4e8ae61f-8cf7-43f0-aaf4-4e59cfad6b7e)
+
+
 
 No arquivo application.properties, já está configurado o banco H2
 
